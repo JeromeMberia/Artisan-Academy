@@ -1,0 +1,23 @@
+{% extends "users/base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Artisan Login{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Artisan Login</h2>
+    
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    
+    <p>Don't have an account? <a href="{% url 'register_artisan' %}">Register here</a></p>
+</div>
+{% endblock %}

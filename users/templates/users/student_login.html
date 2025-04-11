@@ -1,0 +1,30 @@
+{% extends "users/base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Student Login{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="container mt-5 row">
+        <div class="col">
+            <img src="{% static 'images/login.jpg' %}" alt="Login Image" class="img-fluid">
+        </div>
+        <div class="col">
+            <h2 style="font:2rem;">Student Login</h2>
+            
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-danger">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        
+            <form method="POST" class="form-group" style="width: 25rem;">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary mb-6">Login</button>
+            </form>
+            
+            <p>Don't have an account? <a href="{% url 'register_student' %}">Register here</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
