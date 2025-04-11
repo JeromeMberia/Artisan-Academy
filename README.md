@@ -25,7 +25,10 @@ Artisan Academy is a web-based platform that connects artisans with students, al
 1. Clone the repository:
 
    ```sh
-   git clone <GitHub Repository Link>
+   git clone https://github.com/JeromeMberia/Artisan-Academy.git
+   ```
+
+   ```sh
    cd artisan-academy
    ```
 
@@ -33,6 +36,9 @@ Artisan Academy is a web-based platform that connects artisans with students, al
 
    ```sh
    python -m venv venv
+   ```
+
+   ```sh
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
